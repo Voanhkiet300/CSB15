@@ -27,6 +27,7 @@ c"""
 # slicing = create a substring by extracting elements from another string
 #           indexing[] or slice()
 #           [start:stop:end]
+#           [start:stop:end va lay gia tri]
 name = "Kiet Vo Anh"
 # first_name = name[name.find("K"):name.find(" ")]
 # print(first_name)
@@ -37,8 +38,8 @@ name = "Kiet Vo Anh"
 # reserve_name = name[::-1]
 # print(reserve_name)
 
-# testName = name[0:11:2]
-# print(testName)
+testName = name[0:10:4]
+print(testName)
 
 # website1 = "http://google.com"
 # website2 = "http://wikipedia.com"
