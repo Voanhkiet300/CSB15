@@ -22,12 +22,13 @@ import time
 #     print(i)
 #     time.sleep(0.5)
 
-a = int(input("Enter a even number: "))
+a = input("Enter a even number: ")
 
+if (a.isdigit()):
+    while (a%2 != 0 or a <= 0):
+        print("This is not an even number")
+        a = int(input("Enter a even number: "))
+        continue
 
-while (a%2 != 0 or a <= 0 or a.isdigit(False)):
-    print("This is not an even number")
-    a = int(input("Enter a even number: "))
-    continue
-
-print("The entered number is ", a)
+    print("The entered number is ", a)
+print("This is not an even number")
