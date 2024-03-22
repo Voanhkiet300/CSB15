@@ -1,15 +1,7 @@
-a = int(input("nhap vao so canh(>2): "))
+from turtle import *
 
-def draw(a):
-    import turtle
-    t = turtle.Turtle()
-    t.speed(10)
+speed(10)
 
-    for i in range(a):
-        t.forward(100)
-        t.right(180-((a-2)*180)/a)
-    turtle.done()
-
-if a>2:
-    draw(a)
-    
+for i in range(3):
+    forward(100)
+    right(180-((3-2)*180)/3)
