@@ -2,4 +2,4 @@
 # import function as func
 from function import abc
 
-# abc(1,4)
+abc(1,4)
