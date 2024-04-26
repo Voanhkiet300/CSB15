@@ -16,6 +16,19 @@ def bai1():
 
 def bai2():
     a = [5, 1, 8, 92, -1, 30]
+    
+    def selection_sort(arr):
+        for i in range(len(arr)-1):
+            minimum = i
+
+            for j in range(i + 1, len(arr)):
+                # Select the smallest value
+                if arr[j] < arr[minimum]:
+                    minimum = j
+
+            arr[minimum], arr[i] = arr[i], arr[minimum]
+
+        return arr
 
     print("Original list:")
     for i in range(len(a)):

@@ -2,14 +2,24 @@ import msvcrt
 import random
 import os
 
-
-print("== THE ESCAPE GAME ==")
-print("Use W,A,S,D to move (P)layer.")
-print("Find (K)ey first then exit through the (D)oor.")
-print("Press any key to start...")
-
+os.system('cls')
+print("_________________________________________________________")
+print("|\t\t== THE ESCAPE GAME ==\t\t\t|")
+print("|\tUse W,A,S,D to move (P)layer.\t\t\t|")
+print("|\tFind (K)ey first then exit through the (D)oor.\t|")
+print("|\tPress any key to continue...\t\t\t|")
+print("|_______________________________________________________|")
 ch = msvcrt.getch().decode('utf-8')
 
+os.system('cls')
+row = input("Enter row of map: ")
+while row.isdigit() == False:
+    row = input("Enter row of map: ")
+row = int(row)
+col = input("Enter col of map: ")
+while col.isdigit() == False:
+    col = input("Enter col of map: ")
+col = int(col)
 
 
 finish = False
@@ -20,16 +30,23 @@ key = False
 os.system('cls')
 map = []
 def print_map(map, row, col):
+    for i in range((row+1)*2):
+        print("_", end="")
+    print()
     for i in range(col):
+        print("|", end="")
         for j in range(row):
             print(map[i][j], end=" ")
-        print()
+        print("|")
+    print("|", end="")
+    for i in range((row+1)*2-2):
+        print("_", end="")
+    print("|", end="")
+    print()
 
         
 
 
-row = 10
-col = 5
 for i in range(col):
     map.append([])
 for i in range(col):
@@ -88,8 +105,12 @@ while finish == False:
         key = True
     end = check_end()
     if end == True and key == True:
-        print("You win")
+        os.system('cls')
+        
+        print("=== CONGRATULATIONS ===")
+        print("        You win")
         finish = True
     elif end == True and key == False:
+        os.system('cls')
         print("You lose")
         finish = True

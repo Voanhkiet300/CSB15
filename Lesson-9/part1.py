@@ -32,6 +32,7 @@ def bai3():
 
 
 def bai4():
+    s = input("Enter a palindrome")
     def is_palindrome(s):
         return s == s[::-1]
 
@@ -39,6 +40,17 @@ def bai4():
         print("This is a palindrome")
     else:
         print("This is not a palindrome")
+
+    # cach 2
+    # def palindrome(text):
+    #     if len(text)<1:
+    #         return "This is a palindrome."
+    #     else :
+    #         if text[0] == text[-1]:
+    #             return palindrome(text[1:-1])
+    #         else:
+    #             return "This is not a palindrome." 
+    # print(palindrome("HANAH"))
 
 
 
