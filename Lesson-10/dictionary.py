@@ -19,7 +19,7 @@ capitals['USA'] = 'Boston'
 print(capitals['USA'])
 print()
 print()
-capitals.update({'USA': 'New York', 'Vietnam': 'Ho Chi Minh'})
+capitals.update({'aaa': 'Ndd', 'Vietnam': 'Ho Chi Minh'})
 
 # remove + clear
 capitals.pop('China')
@@ -39,6 +39,10 @@ for key, value in capitals.items():
 print()
 
 for i in capitals:
+    print(i)
+print()
+
+for i in capitals.values():
     print(i)
 print()
 
