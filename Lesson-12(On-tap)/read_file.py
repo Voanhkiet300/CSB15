@@ -7,8 +7,8 @@ text2 = "llldqkfkqfqw"
 
 # 'r' Đọc file (read) Báo lỗi nếu file không tồn tại
 
-with open(scr, 'r') as file:
-    file.read()
+# with open(scr, 'r') as file:
+#     file.read()
 
 
 # 'w' Ghi file (write) Báo lỗi nếu file không tồn tại
