@@ -1,33 +1,10 @@
-
-# import time
-
-# import sys
-# from colorama import Fore, Back, Style
-# from colorama import init, AnsiToWin32
-
-# init(wrap=False)
-# stream = AnsiToWin32(sys.stderr).stream
-# # print(Fore.RED + 'some red text', file=stream)
-
-# end = 0
-# start = 0
-# #tạo hàm thuật toán
-# def thuat_toan():
-#   for i in range(1,11):
-#         print(i)
-
-# start = time.time()
-# thuat_toan()
-# end = time.time()
-# print(Fore.BLUE + f"{end-start}", Style.RESET_ALL)
+import pygame as py
 
 
-
-# a = [123, 456, 8789, 1312414]
-
-
-# print(a[2:])
-
-def a():
-    def b():
-        print("a,b")
+# khai bao cua so tro choi
+py.init()
+py.display.set_caption('Ping Pong')
+size = (600, 600)
+canvas = py.display.set_mode(size)
+bg_color = (186, 194, 227)
+clock = py.time.Clock()

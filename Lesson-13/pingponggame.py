@@ -1,4 +1,5 @@
 import pygame as py
+import random
 
 # khai bao cua so tro choi
 py.init()
@@ -31,6 +32,8 @@ down_pressed = False
 # speed
 speed_x = 3
 speed_y = 2
+speed_x = int(random.choice([f'-{speed_x}', f'{speed_x}']))
+speed_y = int(random.choice([f'-{speed_y}', f'{speed_y}']))
 
 
 
@@ -70,13 +73,14 @@ while loop: # play game
     # >< paddles
     if ball_x <= (paddle_1_x + 30) and paddle_1_y <= ball_y <= (paddle_1_y + 120):
         speed_x = -speed_x
-    if ball_x >= (paddle_2_x - 20) and paddle_2_y <= ball_y <= (paddle_2_y + 120):
-        speed_x = -speed_x
+    if ball_x >= (paddle_2_x - 23) and paddle_2_y <= ball_y <= (paddle_2_y + 120):
+        speed_x =-speed_x
     
     # >< edges
-    if ball_x <= 0 or ball_x >= 570:
-        speed_x = -speed_x
-    if ball_y <= 0 or ball_y >= 570:
+    if ball_x <= 0 or ball_x >= 577:
+        speed_x = 0
+        speed_y = 0
+    if ball_y <= 0 or ball_y >= 577:
         speed_y = -speed_y
 
     # paddle >< edges
