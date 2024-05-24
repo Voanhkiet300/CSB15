@@ -1,4 +1,5 @@
 import pygame as py
+import time
 import random
 
 # khai bao cua so tro choi
@@ -30,15 +31,20 @@ up_pressed = False
 down_pressed = False
 
 # speed
+paddle_speed = 5
 speed_x = 3
-speed_y = 2
-speed_x = int(random.choice([f'-{speed_x}', f'{speed_x}']))
-speed_y = int(random.choice([f'-{speed_y}', f'{speed_y}']))
+speed_y = 2.5
+speed_x = float(random.choice([f'-{speed_x}', f'{speed_x}']))
+speed_y = float(random.choice([f'-{speed_y}', f'{speed_y}']))
+if speed_x < 0:
+    move_left = True
+else:
+    move_left = False
 
-
-
+count = 0
 loop = True
 while loop: # play game
+    count += 1
     events = py.event.get() # bat su kien
     for e in events:
         # quit
@@ -66,15 +72,24 @@ while loop: # play game
             elif e.key == py.K_DOWN:
                 down_pressed = False
     # ball move
-    ball_x += speed_x
-    ball_y += speed_y
-
+    if count >= 50:
+        ball_x += speed_x
+        ball_y += speed_y
+    if count >= 150:
+        count = 50
+        if move_left:
+            speed_x -= 0.1
+            paddle_speed += 0.2
+        else:
+            speed_x += 0.1
     # check collision with paddles and edges
     # >< paddles
     if ball_x <= (paddle_1_x + 30) and paddle_1_y <= ball_y <= (paddle_1_y + 120):
+        move_left = False
         speed_x = -speed_x
     if ball_x >= (paddle_2_x - 23) and paddle_2_y <= ball_y <= (paddle_2_y + 120):
-        speed_x =-speed_x
+        move_left = True
+        speed_x = -speed_x
     
     # >< edges
     if ball_x <= 0 or ball_x >= 577:
@@ -95,13 +110,13 @@ while loop: # play game
 
     # paddles move
     if w_pressed:
-        paddle_1_y -= 5
+        paddle_1_y -= paddle_speed
     elif s_pressed:
-        paddle_1_y += 5
+        paddle_1_y += paddle_speed
     if up_pressed:
-        paddle_2_y -= 5
+        paddle_2_y -= paddle_speed
     elif down_pressed:
-        paddle_2_y += 5
+        paddle_2_y += paddle_speed
 
     canvas.fill(bg_color)
     canvas.blit(ball_img, (ball_x, ball_y))
