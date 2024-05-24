@@ -63,13 +63,13 @@ for i in range(rows):
         col.append('-')
     new_map.append(col)
 
-print(new_map)
+# print(new_map)
 
 
 
 # new_map 2
 new_map_2 = [['-']*cols for i in range(rows)]
-print(new_map_2)
+# print(new_map_2)
 
 
 
@@ -78,7 +78,7 @@ cities_in_F = {"New York": 32, "Boston": 75, "Los Angles": 100, "Chicago": 50}
 cities_in_C = {
     key: round((value-32)*(5/9)) for (key, value) in cities_in_F.items()
 }
-print(cities_in_C)
+# print(cities_in_C)
 
 
 # list = [expression for item in iterable if conditional]
@@ -92,15 +92,15 @@ warm_cities = {key: value for (key, value) in cities_in_F.items() if value > 40}
 
 
 # list = [expression if/else for i in iterable]
-students = [50, 40, 70, 60, 80, 100, 0]
-passed_list = list(filter(lambda sc: sc >= 60), students)
-new_class = [item if item >= 60 else False for item in students]
+# students = [50, 40, 70, 60, 80, 100, 0]
+# passed_list = list(filter(lambda sc: sc >= 60), students)
+# new_class = [item if item >= 60 else False for item in students]
 
 
 
 # dictionary = {key: if/else for (key, value) in iterable}
 cities_status = {
-    key: "WARM" if value >= 40 else "COLD" for (key, value) in cities_in_F.item()
+    key: "WARM" if value >= 40 else "COLD" for (key, value) in cities_in_F.items()
 }
 
 # dictionary = {key: function(value) if/else for (key, value) in iterable}
